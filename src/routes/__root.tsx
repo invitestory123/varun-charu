@@ -94,8 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         property: "og:description",
         content: siteDescription,
       },
-      { property: "og:image", content: "/og-image.png" },
-      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image", content: "/og-image-subahu-yashika.png?v=3" },
+      { property: "og:image:secure_url", content: "/og-image-subahu-yashika.png?v=3" },
       { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", "content": "1200" },
       { property: "og:image:height", "content": "630" },
@@ -106,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: siteDescription,
       },
-      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "/og-image-subahu-yashika.png?v=3" },
     ],
     scripts: [
       {
