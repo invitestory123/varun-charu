@@ -11,6 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { invitation } from "../content/invitation";
+
+const siteTitle = `${invitation.couple.groom} Weds ${invitation.couple.bride} — Wedding Invitation`;
+const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding of Subahu (S/o Mrs. Mukta & Mr. Atul Jain) & Yashika (D/o Mr. Nilesh & Mrs. Rashmi Jain, Samana) on Saturday, 21 November 2026 at Hall Arabia, The Elysium Grand. No Gifts, No Shagun - Only Blessings.`;
 
 function NotFoundComponent() {
   return (
@@ -77,42 +81,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Varun Weds Charu — Wedding Invitation" },
+      { title: siteTitle },
       {
         name: "description",
-        content:
-          "॥ श्री महावीराय नमः ॥ Together with their families, cordially invite you to celebrate the wedding ceremony of Varun & Charu on Tuesday, 24 November 2026 at Haveli Heritage. No Gifts, No Shagun - Only Blessings.",
+        content: siteDescription,
       },
       { name: "theme-color", content: "#fdf8ef" },
-      { property: "og:site_name", content: "Varun Weds Charu Wedding" },
+      { property: "og:site_name", content: `${invitation.couple.title} Wedding` },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Varun Weds Charu — Wedding Invitation" },
+      { property: "og:title", content: siteTitle },
       {
         property: "og:description",
-        content:
-          "Together with their families, cordially invite you to celebrate the wedding ceremony of Varun & Charu on Tuesday, 24 November 2026 at Haveli Heritage. With Love and Regards: Jain Family (Gujranwala Jewellers).",
+        content: siteDescription,
       },
       { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
       { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", "content": "1200" },
       { property: "og:image:height", "content": "630" },
-      { property: "og:image:alt", content: "Varun Weds Charu Wedding Celebration Invitation Card" },
+      { property: "og:image:alt", content: `${invitation.couple.title} Wedding Celebration Invitation Card` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Varun Weds Charu — Wedding Invitation" },
+      { name: "twitter:title", content: siteTitle },
       {
         name: "twitter:description",
-        content:
-          "Together with their families, cordially invite you to celebrate the wedding ceremony of Varun & Charu on Tuesday, 24 November 2026 at Haveli Heritage. With Love and Regards: Jain Family (Gujranwala Jewellers).",
+        content: siteDescription,
       },
       { name: "twitter:image", content: "/og-image.png" },
     ],
     scripts: [
       {
         async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=G-VARUNCHARU",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-SUBAHUYASHIKA",
       },
       {
-        children: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VARUNCHARU');`,
+        children: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SUBAHUYASHIKA');`,
       },
     ],
     links: [

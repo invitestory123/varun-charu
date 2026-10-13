@@ -1,5 +1,5 @@
 /**
- * All copy for the Varun & Charu wedding invitation.
+ * All copy for the Subahu & Yashika wedding invitation.
  */
 
 export interface EventItem {
@@ -12,6 +12,7 @@ export interface EventItem {
   description: string;
   dateISO: string;
   mapsQuery: string;
+  mapsUrl?: string;
 }
 
 export const invitation = {
@@ -22,34 +23,34 @@ export const invitation = {
   tagline: "The Beginning of Our Forever",
   subTagline: "Until We Say Forever",
   couple: {
-    groom: "Varun",
-    bride: "Charu",
-    initials: "V & C",
-    title: "Varun Weds Charu",
+    groom: "Subahu",
+    bride: "Yashika",
+    initials: "S & Y",
+    title: "Subahu Weds Yashika",
   },
   heavenlyBlessings: {
-    title: "With the Heavenly Blessings of",
+    title: "With Heavenly Blessings of",
     elders: [
-      "Late Smt. Shanti Devi & Late Lala Kasturi Lal Jain",
-      "Smt. Tarsem Kumari & Sh. Jagdish Kumar Jain",
+      "Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain",
+      "Smt. Usha Jain & Sh. Surinder Kumar Jain",
     ],
   },
   inviteLead:
-    "Together with their families, we cordially invite you to grace the wedding of their beloved grandson",
+    "Together with their families, cordially invite you to celebrate the wedding celebrations of their beloved",
   story: {
-    title: "Varun & Charu",
+    title: "Subahu & Yashika",
     subtitle: "Two souls, two families, one sacred journey",
     groom: {
-      name: "Varun",
+      name: "Subahu",
       role: "The Groom",
-      parentage: "S/o Mrs. Ritu & Mr. Vinay Jain",
-      text: "Beloved grandson of Late Smt. Shanti Devi & Late Lala Kasturi Lal Jain, and Smt. Tarsem Kumari & Sh. Jagdish Kumar Jain. Walking towards forever with grace and love.",
+      parentage: "S/o Mrs. Mukta Jain & Mr. Atul Jain",
+      text: "Beloved grandson of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain, and Smt. Usha Jain & Sh. Surinder Kumar Jain. Walking towards forever with grace, love, and devotion.",
     },
     bride: {
-      name: "Charu",
+      name: "Yashika",
       role: "The Bride",
-      parentage: "D/o Mrs. Nidhi & Mr. Manoj Jain, Ludhiana",
-      text: "Cherished daughter of Mrs. Nidhi & Mr. Manoj Jain, Ludhiana. Bringing warmth, smiles, and grace as we begin our new chapter together.",
+      parentage: "D/o Mr. Nilesh Jain & Mrs. Rashmi Jain, Samana",
+      text: "Cherished daughter of Mr. Nilesh Jain & Mrs. Rashmi Jain, Samana. Bringing warmth, smiles, and grace as we begin our new chapter together.",
     },
   },
   shloka: {
@@ -57,13 +58,14 @@ export const invitation = {
     meaning: "Auspicious is Bhagwan Mahavira, auspicious is Ganadhara Gautama. Auspicious is Acharya Kundakunda, and auspicious is the Jain Dharma.",
   },
   /** ISO date-time of the main wedding ceremony, used by the countdown and calendar file. */
-  dateISO: "2026-11-24T20:30:00+05:30",
-  dateLabel: "Tuesday, 24 November 2026",
-  timeLabel: "8:30 PM onwards",
+  dateISO: "2026-11-21T20:00:00+05:30",
+  dateLabel: "Saturday, 21 November 2026",
+  timeLabel: "8:00 PM onwards",
   venue: {
-    name: "Haveli Heritage",
-    address: "Haveli Heritage",
-    mapsQuery: "Haveli Heritage",
+    name: "Hall Arabia, The Elysium Grand",
+    address: "Hall Arabia, The Elysium Grand",
+    mapsQuery: "Hall Arabia The Elysium Grand",
+    mapsUrl: "https://share.google/GDvJDfE6dhrgUX2yt",
   },
   dressCode: "Traditional & Festive Indian Elegance",
   hero: {
@@ -73,86 +75,79 @@ export const invitation = {
   },
   celebrations: [
     {
-      id: "hathpara",
-      name: "Hathpara",
-      date: "23 November 2026",
-      time: "10:00 AM onwards",
-      venue: "Rangla Punjab, Haveli",
-      address: "Rangla Punjab, Haveli",
-      description: "Auspicious pre-wedding ritual celebrating sweet beginnings and warm traditions.",
-      dateISO: "2026-11-23T10:00:00+05:30",
-      mapsQuery: "Rangla Punjab Haveli",
-    },
-    {
       id: "haldi",
       name: "Haldi",
-      date: "23 November 2026",
-      time: "11:30 AM onwards",
-      venue: "Rangla Punjab, Haveli",
-      address: "Rangla Punjab, Haveli",
-      description: "A cheerful morning drenched in turmeric, golden sunlight, and hearty laughter.",
-      dateISO: "2026-11-23T11:30:00+05:30",
-      mapsQuery: "Rangla Punjab Haveli",
+      date: "20 November 2026",
+      time: "12:00 PM onwards",
+      venue: "DE JAVU MANOR",
+      address: "DE JAVU MANOR",
+      description: "A cheerful afternoon drenched in golden turmeric, vibrant marigolds, and hearty laughter.",
+      dateISO: "2026-11-20T12:00:00+05:30",
+      mapsQuery: "DE JAVU MANOR",
+      mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
     },
     {
-      id: "sangeet",
-      name: "Sangeet",
-      date: "23 November 2026",
-      time: "8:30 PM onwards",
-      venue: "Courtyard, Haveli",
-      address: "Courtyard, Haveli",
-      description: "An evening filled with melody, dancing, glittering celebrations, and family joy.",
-      dateISO: "2026-11-23T20:30:00+05:30",
-      mapsQuery: "Courtyard Haveli",
+      id: "hathbhara",
+      name: "Hathbhara",
+      date: "21 November 2026",
+      time: "10:00 AM onwards",
+      venue: "Shree Baba Gajja Ji Tomri",
+      address: "Shree Baba Gajja Ji Tomri",
+      description: "Auspicious morning ceremony invoking the sacred blessings of Shree Baba Gajja Ji.",
+      dateISO: "2026-11-21T10:00:00+05:30",
+      mapsQuery: "Shree baba Gajja ji Tomri",
+      mapsUrl: "https://share.google/i50JimyqBeYSuNOxO",
     },
     {
       id: "sehrabandi",
-      name: "Sehrabandi",
-      date: "24 November 2026",
-      time: "5:30 PM",
-      venue: "Our Home, 180, Adarsh Nagar",
-      address: "180, Adarsh Nagar",
+      name: "Sehra Bandi",
+      date: "21 November 2026",
+      time: "5:30 PM onwards",
+      venue: "Ramada by Wyndham Jalandhar City Centre",
+      address: "Ramada by Wyndham Jalandhar City Centre",
       description: "The traditional ceremony of tying the sehra and showering heartfelt family blessings.",
-      dateISO: "2026-11-24T17:30:00+05:30",
-      mapsQuery: "180 Adarsh Nagar",
+      dateISO: "2026-11-21T17:30:00+05:30",
+      mapsQuery: "Ramada by Wyndham Jalandhar City Centre",
+      mapsUrl: "https://share.google/V9kQ3juWQuJzMXs4j",
     },
     {
       id: "wedding",
       name: "Wedding",
-      date: "24 November 2026",
-      time: "8:30 PM onwards",
-      venue: "Haveli Heritage",
-      address: "Haveli Heritage",
+      date: "21 November 2026",
+      time: "8:00 PM onwards",
+      venue: "Hall Arabia, The Elysium Grand",
+      address: "Hall Arabia, The Elysium Grand",
       description: "The sacred nuptials, the pheras, and the beginning of our forever.",
-      dateISO: "2026-11-24T20:30:00+05:30",
-      mapsQuery: "Haveli Heritage",
+      dateISO: "2026-11-21T20:00:00+05:30",
+      mapsQuery: "Hall Arabia The Elysium Grand",
+      mapsUrl: "https://share.google/GDvJDfE6dhrgUX2yt",
     },
   ] as EventItem[],
   /** For backwards compatibility with timeline component if needed */
   chapters: [
     {
       no: "I",
-      title: "Hathpara & Haldi",
-      when: "23 November 2026 · 10:00 AM & 11:30 AM",
-      text: "Rangla Punjab, Haveli — A joyous start soaked in auspicious rituals, turmeric glows, and shared laughter.",
+      title: "Haldi Ceremony",
+      when: "20 November 2026 · 12:00 PM onwards",
+      text: "DE JAVU MANOR — A joyous celebration drenched in sunshine, golden turmeric, and love.",
     },
     {
       no: "II",
-      title: "Sangeet Night",
-      when: "23 November 2026 · 8:30 PM onwards",
-      text: "Courtyard, Haveli — Starlit courtyard, lively beats, and dance celebrations under the night sky.",
+      title: "Hathbhara",
+      when: "21 November 2026 · 10:00 AM onwards",
+      text: "Shree Baba Gajja Ji Tomri — Auspicious rituals and sacred blessings for a blissful future.",
     },
     {
       no: "III",
-      title: "Sehrabandi",
-      when: "24 November 2026 · 5:30 PM",
-      text: "Our Home, 180, Adarsh Nagar — Tying the ceremonial sehra, blessed by elders and surrounded by loved ones.",
+      title: "Sehra Bandi",
+      when: "21 November 2026 · 5:30 PM onwards",
+      text: "Ramada by Wyndham Jalandhar City Centre — Tying the ceremonial sehra blessed by elders and loved ones.",
     },
     {
       no: "IV",
       title: "The Wedding (Varmala & Pheras)",
-      when: "24 November 2026 · 8:30 PM onwards",
-      text: "Haveli Heritage — Two souls unite in sacred harmony as Varun and Charu embark on forever.",
+      when: "21 November 2026 · 8:00 PM onwards",
+      text: "Hall Arabia, The Elysium Grand — Two souls unite in sacred harmony as Subahu and Yashika embark on forever.",
     },
   ],
   note: {
@@ -162,26 +157,26 @@ export const invitation = {
   compliments: {
     regards: "With Love and Regards,",
     family: "JAIN FAMILY",
-    firm: "(GUJRANWALA JEWELLERS)",
+    firm: "",
   },
   footer: {
     line1: "Come with your blessings, stay for the joy.",
     line2: "Celebrate the beginning of our forever.",
-    signoff: "With Love & Regards, Jain Family (Gujranwala Jewellers)",
+    signoff: "With Love & Regards, Jain Family",
   },
 } as const;
 
 export const wishes = [
   {
     from: "With Heavenly Blessings",
-    text: "Late Smt. Shanti Devi & Late Lala Kasturi Lal Jain",
+    text: "Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain",
   },
   {
-    from: "Grandparents' Blessings",
-    text: "Smt. Tarsem Kumari & Sh. Jagdish Kumar Jain",
+    from: "Blessings of Elders",
+    text: "Smt. Usha Jain & Sh. Surinder Kumar Jain",
   },
   {
     from: "Parents' Love",
-    text: "Mrs. Ritu & Mr. Vinay Jain · Mrs. Nidhi & Mr. Manoj Jain",
+    text: "Mrs. Mukta Jain & Mr. Atul Jain · Mr. Nilesh Jain & Mrs. Rashmi Jain, Samana",
   },
 ] as const;

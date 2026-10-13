@@ -115,21 +115,21 @@ export function CoupleStory() {
         <div className="mt-12">
           <SectionTitle
             eyebrow="The Beginning of Our Forever"
-            title="Varun Weds Charu"
+            title={invitation.couple.title}
             note="Two loving families uniting in celebration"
           />
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:gap-10">
             <PortraitCard
               src={groom}
-              alt="Portrait of the groom Varun"
+              alt={`Portrait of the groom ${story.groom.name}`}
               name={story.groom.name}
               role={story.groom.role}
               parentage={story.groom.parentage}
             />
             <PortraitCard
               src={bride}
-              alt="Portrait of the bride Charu"
+              alt={`Portrait of the bride ${story.bride.name}`}
               name={story.bride.name}
               role={story.bride.role}
               parentage={story.bride.parentage}

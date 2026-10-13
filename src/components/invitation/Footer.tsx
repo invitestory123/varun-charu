@@ -9,7 +9,7 @@ import { Ornament } from "./Reveal";
 
 const blessings = [
   "May your evenings always be filled with joy and warmth.",
-  "May the journey of Varun & Charu be blessed with abundance.",
+  `May the journey of ${invitation.couple.groom} & ${invitation.couple.bride} be blessed with abundance.`,
   "May laughter and peace echo in your home forever.",
   "May Bhagwan Mahavira shower endless grace upon the couple.",
   "May your bond grow stronger with each passing sunrise.",
@@ -137,7 +137,7 @@ export function Footer() {
           whileTap={{ scale: 0.95 }}
           className="glass-plate mt-10 rounded-full px-8 py-3.5 font-sans text-[0.66rem] tracking-[0.3em] text-primary uppercase shadow-sm border border-[color-mix(in_oklab,var(--gold)_30%,transparent)] cursor-pointer"
         >
-          ✨ Release a wish lantern for Varun &amp; Charu
+          ✨ Release a wish lantern for {invitation.couple.groom} &amp; {invitation.couple.bride}
         </motion.button>
 
         {/* With Love and Regards */}
@@ -148,13 +148,15 @@ export function Footer() {
           <h2 className="font-display text-2xl sm:text-3xl text-primary font-medium tracking-wide">
             {invitation.compliments.family}
           </h2>
-          <p className="font-sans text-xs sm:text-sm tracking-[0.25em] text-gold-deep uppercase font-semibold">
-            {invitation.compliments.firm}
-          </p>
+          {invitation.compliments.firm && (
+            <p className="font-sans text-xs sm:text-sm tracking-[0.25em] text-gold-deep uppercase font-semibold">
+              {invitation.compliments.firm}
+            </p>
+          )}
         </div>
 
         <p className="mt-6 font-sans text-[0.62rem] tracking-[0.34em] text-primary/65 uppercase">
-          {invitation.dateLabel} · Haveli Heritage
+          {invitation.dateLabel} · {invitation.venue.name}
         </p>
 
         <p className="mt-10 inline-flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.3em] text-primary/55 uppercase">

@@ -75,7 +75,7 @@ export function Countdown() {
           <Unit value={left.seconds} label="Seconds" />
         </div>
         <p className="mt-8 text-center font-display text-lg sm:text-xl text-primary font-medium tracking-wide">
-          {invitation.dateLabel} · Haveli Heritage
+          {invitation.dateLabel} · {invitation.venue.name}
         </p>
       </div>
     </section>

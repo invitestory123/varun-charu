@@ -61,7 +61,7 @@ export function Timeline() {
               opacity="0.65"
               style={{ pathLength: draw }}
             />
-            {[110, 320, 560, 810, 1070].map((y, i) => (
+            {[120, 380, 690, 1010].map((y, i) => (
               <motion.ellipse
                 key={y}
                 cx={i % 2 ? 30 : 10}
@@ -126,9 +126,10 @@ export function Timeline() {
                         Venue: {event.venue}
                       </span>
                       <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                          event.mapsQuery,
-                        )}`}
+                        href={
+                          event.mapsUrl ||
+                          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.mapsQuery)}`
+                        }
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 font-sans text-[0.62rem] tracking-[0.2em] uppercase text-primary hover:text-gold-deep transition-colors font-semibold"

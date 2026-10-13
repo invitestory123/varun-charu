@@ -20,7 +20,7 @@ function buildIcs() {
     `DTEND:${stamp(end)}`,
     `SUMMARY:${invitation.couple.groom} Weds ${invitation.couple.bride} — Wedding`,
     `LOCATION:${invitation.venue.name}, ${invitation.venue.address}`,
-    "DESCRIPTION:No Gifts, No Shagun, Only Blessings. With Love and Regards, Jain Family (Gujranwala Jewellers)",
+    "DESCRIPTION:No Gifts, No Shagun, Only Blessings. With Love and Regards, Jain Family",
     "END:VEVENT",
     "END:VCALENDAR",
   ];
@@ -30,14 +30,14 @@ function buildIcs() {
 const cards = [
   { icon: Sparkles, label: "Save The Date", value: invitation.dateLabel },
   { icon: Clock, label: "The Hour", value: invitation.timeLabel },
-  { icon: MapPin, label: "The Venue", value: `${invitation.venue.name} · ${invitation.venue.address}` },
+  { icon: MapPin, label: "The Venue", value: `${invitation.venue.name}` },
   { icon: Gift, label: "Heartfelt Request", value: "No Gifts, No Shagun · Only Blessings" },
 ];
 
 export function Details() {
-  const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    invitation.venue.mapsQuery,
-  )}`;
+  const maps =
+    invitation.venue.mapsUrl ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(invitation.venue.mapsQuery)}`;
 
   return (
     <section id="details" className="relative overflow-hidden px-5 py-24">
@@ -52,8 +52,8 @@ export function Details() {
       <div className="mx-auto max-w-4xl">
         <SectionTitle
           eyebrow="Save The Date"
-          title="24 November 2026"
-          note="Varun Weds Charu · Until We Say Forever"
+          title={invitation.dateLabel}
+          note={`${invitation.couple.title} · ${invitation.subTagline}`}
         />
         <Ornament className="mt-8" />
 
@@ -80,7 +80,7 @@ export function Details() {
         <Reveal delay={0.1} className="mt-8 flex flex-wrap justify-center gap-3">
           <motion.a
             href={buildIcs()}
-            download="varun-charu-wedding.ics"
+            download={`${invitation.couple.groom.toLowerCase()}-${invitation.couple.bride.toLowerCase()}-wedding.ics`}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-sans text-[0.66rem] tracking-[0.24em] text-primary-foreground uppercase shadow-md"
@@ -95,7 +95,7 @@ export function Details() {
             whileTap={{ scale: 0.97 }}
             className="glass-plate inline-flex items-center gap-2 rounded-full px-6 py-3 font-sans text-[0.66rem] tracking-[0.24em] text-primary uppercase border border-[color-mix(in_oklab,var(--gold)_40%,transparent)] shadow-xs"
           >
-            <MapPin size={15} strokeWidth={1.6} /> Directions to Haveli Heritage
+            <MapPin size={15} strokeWidth={1.6} /> Directions to {invitation.venue.name}
           </motion.a>
         </Reveal>
 

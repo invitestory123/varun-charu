@@ -160,7 +160,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.7 }}
           className="mt-2 font-sans text-[0.68rem] tracking-[0.38em] text-primary/70 uppercase sm:text-sm font-semibold"
         >
-          VARUN WEDS CHARU
+          {invitation.couple.title}
         </motion.p>
 
         <motion.div
@@ -186,7 +186,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 1.15 }}
           className="mt-1 font-sans text-[0.62rem] tracking-[0.3em] text-gold-deep font-semibold uppercase sm:text-xs"
         >
-          24 November 2026 · Haveli Heritage
+          {invitation.dateLabel} · {invitation.venue.name}
         </motion.p>
 
         <motion.a
