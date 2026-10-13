@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { IntroGate } from "@/components/invitation/IntroGate";
 import { Hero } from "@/components/invitation/Hero";
@@ -38,6 +39,10 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    document.title = title;
+  }, []);
+
   return (
     <main className="relative w-full overflow-x-hidden">
       <IntroGate />

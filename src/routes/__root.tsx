@@ -142,6 +142,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <title>{siteTitle}</title>
         <HeadContent />
       </head>
       <body>
@@ -154,6 +155,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    document.title = siteTitle;
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
