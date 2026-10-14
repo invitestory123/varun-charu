@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 
-// Convert local assets to base64 so headless Edge renders them instantly without network
 function toBase64(relPath, mime) {
   const full = path.join(rootDir, relPath);
   const data = fs.readFileSync(full).toString("base64");
@@ -22,7 +21,7 @@ const htmlContent = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+Devanagari:wght@600;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -35,7 +34,7 @@ const htmlContent = `<!DOCTYPE html>
       height: 630px;
       overflow: hidden;
       background: #fdf8ef;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       position: relative;
       display: flex;
       align-items: center;
@@ -49,7 +48,7 @@ const htmlContent = `<!DOCTYPE html>
       background-image: url('${palaceB64}');
       background-size: cover;
       background-position: center bottom;
-      opacity: 0.16;
+      opacity: 0.14;
     }
 
     /* Silk & Ivory Tint Overlay */
@@ -57,33 +56,33 @@ const htmlContent = `<!DOCTYPE html>
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, 
-        rgba(253, 248, 239, 0.94) 0%, 
-        rgba(255, 252, 247, 0.91) 45%, 
+        rgba(253, 248, 239, 0.95) 0%, 
+        rgba(255, 252, 246, 0.92) 50%, 
         rgba(253, 248, 239, 0.97) 100%);
     }
 
     /* Outer Luxury Frame */
     .card {
       position: relative;
-      width: 1146px;
-      height: 576px;
-      border-radius: 28px;
-      border: 2px solid rgba(200, 160, 85, 0.85);
-      background: rgba(255, 254, 250, 0.82);
-      box-shadow: 0 10px 40px rgba(160, 120, 60, 0.12), inset 0 0 40px rgba(230, 205, 145, 0.18);
+      width: 1152px;
+      height: 586px;
+      border-radius: 26px;
+      border: 2px solid rgba(200, 160, 85, 0.88);
+      background: rgba(255, 254, 250, 0.86);
+      box-shadow: 0 10px 40px rgba(160, 120, 60, 0.12), inset 0 0 45px rgba(230, 205, 145, 0.18);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 26px 40px 24px;
+      padding: 22px 30px 18px;
       z-index: 2;
     }
 
     /* Inner Fine Gold Inset Border */
     .card-inset {
       position: absolute;
-      inset: 10px;
-      border-radius: 20px;
+      inset: 9px;
+      border-radius: 19px;
       border: 1px solid rgba(198, 155, 75, 0.45);
       pointer-events: none;
     }
@@ -91,53 +90,52 @@ const htmlContent = `<!DOCTYPE html>
     /* Corner Florals */
     .corner-boug-tl {
       position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 260px;
-      opacity: 0.88;
+      top: -24px;
+      left: -24px;
+      width: 250px;
+      opacity: 0.9;
       pointer-events: none;
     }
 
     .corner-boug-tr {
       position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 260px;
+      top: -24px;
+      right: -24px;
+      width: 250px;
       transform: scaleX(-1);
-      opacity: 0.88;
+      opacity: 0.9;
       pointer-events: none;
     }
 
-    /* Sacred Invocations */
+    /* Top: Invocations */
     .invocations {
       display: flex;
       gap: 28px;
       align-items: center;
       justify-content: center;
       font-family: 'Noto Serif Devanagari', 'Nirmala UI', serif;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 700;
       color: #9e6d24;
       letter-spacing: 0.04em;
     }
 
     .inv-badge {
-      background: rgba(246, 235, 212, 0.65);
-      border: 1px solid rgba(212, 175, 95, 0.4);
+      background: rgba(246, 235, 212, 0.7);
+      border: 1px solid rgba(212, 175, 95, 0.45);
       padding: 3px 18px;
       border-radius: 999px;
       box-shadow: 0 2px 6px rgba(180, 140, 60, 0.08);
     }
 
-    /* Heavenly Blessings */
+    /* Blessings */
     .blessings {
       text-align: center;
-      margin-top: 4px;
+      margin-top: 1px;
     }
 
     .blessings-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.32em;
       color: #8c6832;
@@ -146,21 +144,21 @@ const htmlContent = `<!DOCTYPE html>
 
     .blessings-names {
       font-family: 'Marcellus', serif;
-      font-size: 15px;
-      color: #3d242c;
+      font-size: 14.5px;
+      color: #3b2229;
       letter-spacing: 0.03em;
-      margin-top: 3px;
-      line-height: 1.35;
+      margin-top: 2px;
+      line-height: 1.3;
     }
 
-    /* The Couple */
+    /* Couple Section */
     .couple-section {
       text-align: center;
-      margin-top: 6px;
+      margin-top: 2px;
     }
 
     .lead-in {
-      font-size: 12px;
+      font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 0.34em;
       color: #a87932;
@@ -170,94 +168,129 @@ const htmlContent = `<!DOCTYPE html>
     .couple-title {
       font-family: 'Marcellus', serif;
       font-size: 58px;
-      line-height: 1.1;
+      line-height: 1.05;
       color: #4a1625;
       letter-spacing: 0.03em;
-      text-shadow: 0 2px 14px rgba(212, 175, 95, 0.28);
-      margin-top: 4px;
+      text-shadow: 0 2px 14px rgba(212, 175, 95, 0.3);
+      margin-top: 3px;
     }
 
     .couple-amp {
       font-family: 'Great Vibes', cursive;
-      font-size: 48px;
+      font-size: 46px;
       color: #b5832a;
-      margin: 0 16px;
+      margin: 0 14px;
       font-weight: 400;
     }
 
     .parentage {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 600;
       color: #7a3c48;
-      letter-spacing: 0.04em;
-      margin-top: 5px;
-    }
-
-    /* Center Flourish */
-    .flourish {
-      width: 250px;
-      height: auto;
-      opacity: 0.85;
-      margin: 6px auto;
-    }
-
-    /* Event Details */
-    .event-info {
-      text-align: center;
-      margin-top: 2px;
-    }
-
-    .event-label {
-      font-family: 'Marcellus', serif;
-      font-size: 20px;
-      letter-spacing: 0.22em;
-      color: #87283c;
-      font-weight: 500;
-    }
-
-    .event-datetime {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px;
-      font-weight: 600;
-      color: #382824;
       letter-spacing: 0.03em;
       margin-top: 3px;
     }
 
-    .event-venue {
-      font-family: 'Marcellus', serif;
-      font-size: 21px;
-      color: #2b1f1c;
-      letter-spacing: 0.04em;
+    /* Date Announcement Banner */
+    .date-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       margin-top: 3px;
     }
 
-    /* Footer Request */
-    .card-footer {
+    .date-banner-line {
+      height: 1px;
+      width: 110px;
+      background: linear-gradient(90deg, transparent, rgba(200, 160, 85, 0.8), transparent);
+    }
+
+    .date-badge {
+      font-family: 'Marcellus', serif;
+      font-size: 16px;
+      letter-spacing: 0.22em;
+      color: #8c2438;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 3px 20px;
+      border-radius: 999px;
+      background: rgba(246, 230, 205, 0.55);
+      border: 1px solid rgba(212, 175, 95, 0.45);
+    }
+
+    /* 4-Celebrations Row */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 1070px;
+      margin-top: 6px;
+    }
+
+    .event-card {
+      background: rgba(255, 252, 245, 0.8);
+      border: 1px solid rgba(212, 175, 95, 0.35);
+      border-radius: 14px;
+      padding: 8px 10px;
       text-align: center;
-      border-top: 1px solid rgba(212, 175, 95, 0.4);
-      padding-top: 10px;
-      width: 75%;
-      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(180, 140, 60, 0.06);
+    }
+
+    .event-card-name {
+      font-family: 'Marcellus', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #4a1625;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .event-card-datetime {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #9e6d24;
+      margin-top: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    .event-card-venue {
+      font-size: 11.5px;
+      color: #554038;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+
+    /* Bottom: Request & Regards */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 960px;
+      border-top: 1px solid rgba(212, 175, 95, 0.45);
+      padding-top: 8px;
+      margin-top: 4px;
     }
 
     .no-gifts {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 700;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.24em;
       color: #9e6b22;
       text-transform: uppercase;
     }
 
     .regards {
-      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 14px;
-      color: #634d42;
-      margin-top: 2px;
+      font-size: 14.5px;
+      color: #5a4237;
       letter-spacing: 0.04em;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -280,8 +313,7 @@ const htmlContent = `<!DOCTYPE html>
     <div class="blessings">
       <div class="blessings-title">With Heavenly Blessings of</div>
       <div class="blessings-names">
-        Late Smt. Mahimawanti Jain &amp; Late Sh. Dev Raj Jain<br>
-        &amp; Smt. Usha Jain &amp; Sh. Surinder Kumar Jain
+        Late Smt. Mahimawanti Jain &amp; Late Sh. Dev Raj Jain &nbsp;·&nbsp; Smt. Usha Jain &amp; Sh. Surinder Kumar Jain
       </div>
     </div>
 
@@ -296,14 +328,35 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </div>
 
-    <!-- Center Gold Flourish -->
-    <img src="${flourishB64}" class="flourish" alt="">
+    <!-- Date Announcement -->
+    <div class="date-banner">
+      <div class="date-banner-line"></div>
+      <div class="date-badge">20th &amp; 21st November 2026</div>
+      <div class="date-banner-line"></div>
+    </div>
 
-    <!-- Event & Venue -->
-    <div class="event-info">
-      <div class="event-label">WEDDING CELEBRATION</div>
-      <div class="event-datetime">Saturday, 21 November 2026 &nbsp;·&nbsp; 8:00 PM onwards</div>
-      <div class="event-venue">Hall Arabia, The Elysium Grand</div>
+    <!-- 4 Celebrations Grid -->
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-card-name">Haldi</div>
+        <div class="event-card-datetime">20 Nov · 12:00 PM</div>
+        <div class="event-card-venue">DE JAVU MANOR</div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-name">Hathbhara</div>
+        <div class="event-card-datetime">21 Nov · 10:00 AM</div>
+        <div class="event-card-venue">Shree Baba Gajja Ji</div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-name">Sehra Bandi</div>
+        <div class="event-card-datetime">21 Nov · 5:30 PM</div>
+        <div class="event-card-venue">Ramada City Centre</div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-name">Wedding</div>
+        <div class="event-card-datetime">21 Nov · 8:00 PM</div>
+        <div class="event-card-venue">Hall Arabia, Elysium Grand</div>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -317,17 +370,32 @@ const htmlContent = `<!DOCTYPE html>
 
 const cardHtmlPath = path.join(rootDir, "scripts", "og-card.html");
 fs.writeFileSync(cardHtmlPath, htmlContent, "utf-8");
-console.log("[generate_og] Created scripts/og-card.html");
+console.log("[generate_og] Updated scripts/og-card.html");
 
 const edgePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+const tempPng = path.join(rootDir, "scripts", "temp-og.png");
 const outputPng = path.join(rootDir, "public", "og-image.png");
 const outputPngSubahu = path.join(rootDir, "public", "og-image-subahu-yashika.png");
-const outputWebp = path.join(rootDir, "public", "og-image.webp");
 
-const cmd = `"${edgePath}" --headless=new --disable-gpu --screenshot="${outputPng}" --window-size=1200,630 "file://${cardHtmlPath.replace(/\\/g, "/")}"`;
+const cmd = `"${edgePath}" --headless=new --disable-gpu --screenshot="${tempPng}" --window-size=1200,630 "file://${cardHtmlPath.replace(/\\/g, "/")}"`;
 console.log("[generate_og] Capturing screenshot via Edge headless...");
 execSync(cmd, { stdio: "inherit" });
 
-// Also copy to og-image-subahu-yashika.png (cache-buster filename)
-fs.copyFileSync(outputPng, outputPngSubahu);
-console.log("[generate_og] Saved public/og-image.png and public/og-image-subahu-yashika.png");
+// Run Python PIL for maximum lossless compression: compress_level=9 and optimize=True
+const pyCompress = `
+from PIL import Image
+import os
+
+img = Image.open(r"${tempPng}").convert("RGB")
+img.save(r"${outputPng}", "PNG", optimize=True, compress_level=9)
+img.save(r"${outputPngSubahu}", "PNG", optimize=True, compress_level=9)
+img.save(r"${path.join(rootDir, "public", "og-image.webp")}", "WEBP", lossless=True, quality=100, method=6)
+img.save(r"${path.join(rootDir, "public", "og-image-subahu-yashika.webp")}", "WEBP", lossless=True, quality=100, method=6)
+
+print(f"Lossless PNG size: {os.path.getsize(r'${outputPng}')} bytes")
+print(f"Lossless WebP size: {os.path.getsize(r'${path.join(rootDir, "public", "og-image.webp")}')} bytes")
+`;
+
+fs.writeFileSync(path.join(rootDir, "scripts", "compress.py"), pyCompress, "utf-8");
+execSync(`python scripts/compress.py`, { stdio: "inherit" });
+console.log("[generate_og] Lossless compression completed.");
