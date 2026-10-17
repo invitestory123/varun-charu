@@ -108,59 +108,45 @@ export function Footer() {
       <div className="relative z-20 mx-auto max-w-xl px-6 text-center">
         <Ornament />
 
-        {/* No Gifts, No Shagun Card */}
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.4 }}
-          className="plate paper-grain mt-10 rounded-3xl p-7 sm:p-9 border border-[color-mix(in_oklab,var(--gold)_35%,transparent)] shadow-md"
-        >
-          <div className="flex items-center justify-center gap-2 text-gold-deep mb-2">
-            <Sparkles size={16} />
-            <span className="font-sans text-[0.68rem] tracking-[0.3em] uppercase font-semibold">
-              Cordially Requested
-            </span>
-            <Sparkles size={16} />
-          </div>
-          <h3 className="font-display text-2xl sm:text-3xl text-primary font-medium tracking-wide">
-            {invitation.note.heading}
-          </h3>
-          <p className="mt-2 font-script text-xl sm:text-2xl text-gold-deep italic font-medium">
-            {invitation.note.subheading}
-          </p>
-        </motion.div>
-
         {/* Wish Lantern Action */}
         <motion.button
           type="button"
           onClick={release}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
-          className="glass-plate mt-10 rounded-full px-8 py-3.5 font-sans text-[0.66rem] tracking-[0.3em] text-primary uppercase shadow-sm border border-[color-mix(in_oklab,var(--gold)_30%,transparent)] cursor-pointer"
+          className="glass-plate mt-8 rounded-full px-8 py-4 font-sans text-xs sm:text-sm tracking-[0.28em] text-primary uppercase shadow-md border-2 border-[color-mix(in_oklab,var(--gold-deep)_40%,transparent)] cursor-pointer font-bold"
         >
           ✨ Release a wish lantern for {invitation.couple.groom} &amp; {invitation.couple.bride}
         </motion.button>
 
+        {/* #SYforever */}
+        <div className="mt-10">
+          <span className="inline-block rounded-full bg-[color-mix(in_oklab,var(--gold)_25%,var(--ivory))] px-6 py-2 font-sans text-sm sm:text-base font-bold tracking-[0.35em] text-primary uppercase shadow-xs border border-[color-mix(in_oklab,var(--gold)_50%,transparent)]">
+            #SYforever
+          </span>
+        </div>
+
         {/* With Love and Regards */}
-        <div className="mt-14 space-y-1">
-          <p className="font-script text-xl text-primary/80 italic">
+        <div className="mt-10 space-y-1.5">
+          <p className="font-script text-2xl text-primary italic font-semibold">
             {invitation.compliments.regards}
           </p>
-          <h2 className="font-display text-2xl sm:text-3xl text-primary font-medium tracking-wide">
+          <h2 className="font-display text-3xl sm:text-4xl text-primary font-bold tracking-wide uppercase">
             {invitation.compliments.family}
           </h2>
           {invitation.compliments.firm && (
-            <p className="font-sans text-xs sm:text-sm tracking-[0.25em] text-gold-deep uppercase font-semibold">
+            <p className="font-sans text-sm tracking-[0.25em] text-gold-deep uppercase font-bold">
               {invitation.compliments.firm}
             </p>
           )}
         </div>
 
-        <p className="mt-6 font-sans text-[0.62rem] tracking-[0.34em] text-primary/65 uppercase">
-          {invitation.dateLabel} · {invitation.venue.name}
+        <p className="mt-6 font-sans text-xs sm:text-sm tracking-[0.25em] text-primary font-bold uppercase">
+          {invitation.venue.name}
         </p>
 
-        <p className="mt-10 inline-flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.3em] text-primary/55 uppercase">
-          Made with <Heart size={11} className="fill-rose text-rose" /> for our families and friends
+        <p className="mt-10 inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] text-primary/80 uppercase font-semibold">
+          Made with <Heart size={14} className="fill-rose text-rose" /> for our families and friends
         </p>
       </div>
     </footer>

@@ -17,8 +17,8 @@ function diff(target: number) {
 function Unit({ value, label }: { value: number; label: string }) {
   const text = String(value).padStart(2, "0");
   return (
-    <div className="glass-plate flex min-w-[4.6rem] flex-col items-center rounded-2xl px-3 py-4 sm:min-w-[6rem] sm:px-5 sm:py-6">
-      <div className="relative h-9 overflow-hidden sm:h-12">
+    <div className="glass-plate flex min-w-[5rem] flex-col items-center rounded-2xl px-4 py-4 sm:min-w-[6.5rem] sm:px-6 sm:py-6 border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-sm">
+      <div className="relative h-10 overflow-hidden sm:h-14">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={text}
@@ -26,13 +26,13 @@ function Unit({ value, label }: { value: number; label: string }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -22, opacity: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="block font-display text-3xl text-primary tabular-nums sm:text-4xl"
+            className="block font-display text-4xl text-primary font-bold tabular-nums sm:text-5xl"
           >
             {text}
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="mt-2 font-sans text-[0.55rem] tracking-[0.3em] text-gold-deep uppercase sm:text-[0.62rem]">
+      <span className="mt-2 font-sans text-xs sm:text-sm tracking-[0.25em] text-primary uppercase font-bold">
         {label}
       </span>
     </div>
@@ -74,8 +74,8 @@ export function Countdown() {
           <Unit value={left.minutes} label="Minutes" />
           <Unit value={left.seconds} label="Seconds" />
         </div>
-        <p className="mt-8 text-center font-display text-lg sm:text-xl text-primary font-medium tracking-wide">
-          {invitation.dateLabel} · {invitation.venue.name}
+        <p className="mt-8 text-center font-display text-lg sm:text-xl text-primary font-bold tracking-wide">
+          #SYforever · {invitation.venue.name}
         </p>
       </div>
     </section>

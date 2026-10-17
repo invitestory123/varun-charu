@@ -13,8 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { invitation } from "../content/invitation";
 
-const siteTitle = `${invitation.couple.groom} Weds ${invitation.couple.bride} — Wedding Invitation`;
-const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding of Subahu (S/o Mrs. Mukta & Mr. Atul Jain) & Yashika (D/o Mr. Nilesh & Mrs. Rashmi Jain, Samana) on Saturday, 21 November 2026 at Hall Arabia, The Elysium Grand. No Gifts, No Shagun - Only Blessings.`;
+const siteTitle = `${invitation.couple.groom} Weds ${invitation.couple.bride} #SYforever — Wedding Invitation`;
+const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at De javu manor, Khambra. #SYforever`;
 
 function NotFoundComponent() {
   return (

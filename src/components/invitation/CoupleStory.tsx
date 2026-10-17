@@ -1,23 +1,21 @@
 import { motion } from "motion/react";
 import { Sparkles, Heart } from "lucide-react";
-const bride = "https://media.invitestory.in/ever-after-bloom/src/assets/portrait-bride.jpg";
-const groom = "https://media.invitestory.in/ever-after-bloom/src/assets/portrait-groom.jpg";
 import { invitation } from "@/content/invitation";
 import { Ornament, Reveal, SectionTitle } from "./Reveal";
 
-function PortraitCard({
-  src,
-  alt,
+function CoupleCard({
+  initial,
   name,
   role,
   parentage,
+  text,
   flip,
 }: {
-  src: string;
-  alt: string;
+  initial: string;
   name: string;
   role: string;
   parentage: string;
+  text: string;
   flip?: boolean;
 }) {
   return (
@@ -25,39 +23,33 @@ function PortraitCard({
       <motion.article
         whileHover={{ y: -6 }}
         transition={{ type: "spring", stiffness: 180, damping: 20 }}
-        className="plate paper-grain overflow-hidden rounded-[2.2rem] border border-[color-mix(in_oklab,var(--gold)_30%,transparent)] shadow-lg"
+        className="plate paper-grain h-full rounded-[2.2rem] p-8 sm:p-10 border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-lg flex flex-col items-center text-center justify-between"
       >
-        <div className="relative overflow-hidden">
-          <motion.img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            width={1024}
-            height={1024}
-            className="aspect-square w-full object-cover"
-            initial={{ scale: 1.06 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-            style={{
-              background:
-                "radial-gradient(circle at 50% 70%, color-mix(in oklab, var(--gold) 22%, transparent), transparent 65%)",
-            }}
-          />
-        </div>
-        <div className="px-6 pt-6 pb-8 text-center">
-          <p className="font-sans text-[0.62rem] tracking-[0.4em] text-gold-deep uppercase">
+        <div className="w-full flex flex-col items-center">
+          {/* Royal Crest Monogram instead of painted photo */}
+          <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[var(--gold-deep)] bg-[color-mix(in_oklab,var(--ivory)_85%,transparent)] shadow-inner">
+            <span
+              className="font-display text-4xl sm:text-5xl font-bold text-primary"
+            >
+              {initial}
+            </span>
+            <div className="absolute -top-1.5 -right-1.5 text-gold-deep">
+              <Sparkles size={18} />
+            </div>
+          </div>
+
+          <p className="mt-6 font-sans text-xs sm:text-sm tracking-[0.4em] text-gold-deep uppercase font-bold">
             {role}
           </p>
-          <h3 className="mt-3 font-display text-3xl sm:text-4xl text-primary font-medium tracking-wide">
+          <h3 className="mt-3 font-display text-4xl sm:text-5xl text-primary font-bold tracking-wide">
             {name}
           </h3>
-          <p className="mt-3 text-sm font-sans font-medium text-primary/80 tracking-wide sm:text-base">
+          <p className="mt-3 text-base sm:text-lg font-sans font-bold text-primary/90 tracking-wide">
             {parentage}
+          </p>
+          <div className="mx-auto my-4 h-px w-20 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
+          <p className="font-script text-lg sm:text-xl text-primary/90 italic leading-relaxed">
+            &ldquo;{text}&rdquo;
           </p>
         </div>
       </motion.article>
@@ -83,27 +75,27 @@ export function CoupleStory() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="glass-plate rounded-[2rem] p-8 sm:p-10 border border-[color-mix(in_oklab,var(--gold)_40%,transparent)] shadow-sm">
             <div className="flex items-center justify-center gap-2 text-gold-deep mb-3">
-              <Sparkles size={16} />
-              <p className="font-sans text-[0.68rem] tracking-[0.38em] uppercase font-semibold">
+              <Sparkles size={18} />
+              <p className="font-sans text-xs sm:text-sm tracking-[0.38em] uppercase font-bold">
                 {heavenlyBlessings.title}
               </p>
-              <Sparkles size={16} />
+              <Sparkles size={18} />
             </div>
 
             <div className="space-y-2 mt-4">
               {heavenlyBlessings.elders.map((elder, idx) => (
                 <p
                   key={idx}
-                  className="font-display text-lg sm:text-xl text-primary leading-snug font-medium"
+                  className="font-display text-xl sm:text-2xl text-primary leading-snug font-bold"
                 >
                   {elder}
                 </p>
               ))}
             </div>
 
-            <div className="mx-auto my-6 h-px w-24 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
+            <div className="mx-auto my-6 h-0.5 w-28 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
 
-            <p className="font-script text-lg sm:text-xl text-primary/85 italic leading-relaxed">
+            <p className="font-script text-xl sm:text-2xl text-primary italic leading-relaxed font-medium">
               &ldquo;{inviteLead}&rdquo;
             </p>
           </div>
@@ -115,24 +107,24 @@ export function CoupleStory() {
         <div className="mt-12">
           <SectionTitle
             eyebrow="The Beginning of Our Forever"
-            title={invitation.couple.title}
+            title={`${invitation.couple.title} #SYforever`}
             note="Two loving families uniting in celebration"
           />
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:gap-10">
-            <PortraitCard
-              src={groom}
-              alt={`Portrait of the groom ${story.groom.name}`}
+            <CoupleCard
+              initial="S"
               name={story.groom.name}
               role={story.groom.role}
               parentage={story.groom.parentage}
+              text={story.groom.text}
             />
-            <PortraitCard
-              src={bride}
-              alt={`Portrait of the bride ${story.bride.name}`}
+            <CoupleCard
+              initial="Y"
               name={story.bride.name}
               role={story.bride.role}
               parentage={story.bride.parentage}
+              text={story.bride.text}
               flip
             />
           </div>
@@ -148,14 +140,14 @@ export function CoupleStory() {
               <Heart size={18} className="fill-[var(--gold)]" />
             </div>
             <p
-              className="text-base sm:text-lg md:text-xl text-primary font-semibold leading-relaxed tracking-wide"
+              className="text-lg sm:text-xl md:text-2xl text-primary font-bold leading-relaxed tracking-wide"
               style={{ fontFamily: "var(--font-devanagari)" }}
             >
               मंगलम् भगवान वीरो, मंगलं गौतमो गणी।
               <br />
               मंगलम् कुन्दकुन्दार्यो, जैन धर्मोऽस्तु मंगलम्॥
             </p>
-            <p className="mt-3 font-sans text-[0.62rem] sm:text-xs tracking-[0.25em] text-gold-deep uppercase">
+            <p className="mt-3 font-sans text-xs sm:text-sm tracking-[0.28em] text-gold-deep uppercase font-bold">
               Jain Mangalacharan · Sacred Invocations
             </p>
           </motion.div>

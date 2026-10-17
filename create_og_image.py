@@ -132,7 +132,7 @@ d_w = d_bbox[2] - d_bbox[0]
 draw.text(((WIDTH - d_w) // 2, 392), date_text, fill=(65, 55, 50, 245), font=font_georgia)
 
 # 8. Venue
-venue_text = "Hall Arabia, The Elysium Grand"
+venue_text = "De javu manor, Khambra"
 v_bbox = draw.textbbox((0, 0), venue_text, font=font_georgia_b_lg)
 v_w = v_bbox[2] - v_bbox[0]
 draw.text(((WIDTH - v_w) // 2, 432), venue_text, fill=(90, 75, 65, 240), font=font_georgia_b_lg)
@@ -142,8 +142,8 @@ line_y = 485
 line_w = 340
 draw.line([((WIDTH - line_w) // 2, line_y), ((WIDTH + line_w) // 2, line_y)], fill=(212, 175, 95, 140), width=1)
 
-# 9. No gifts request & family compliments
-note_text = "NO GIFTS, NO SHAGUN  ·  ONLY BLESSINGS"
+# 9. Hashtag & family compliments
+note_text = "#SYforever"
 n_bbox = draw.textbbox((0, 0), note_text, font=font_georgia_b)
 n_w = n_bbox[2] - n_bbox[0]
 draw.text(((WIDTH - n_w) // 2, 502), note_text, fill=(160, 115, 50, 250), font=font_georgia_b)

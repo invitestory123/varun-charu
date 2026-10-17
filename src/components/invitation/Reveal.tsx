@@ -56,19 +56,19 @@ export function SectionTitle({
     <div className="text-center">
       {eyebrow ? (
         <Reveal y={14}>
-          <p className="font-sans text-[0.68rem] tracking-[0.42em] text-gold-deep uppercase">
+          <p className="font-sans text-xs sm:text-sm tracking-[0.38em] text-gold-deep uppercase font-bold">
             {eyebrow}
           </p>
         </Reveal>
       ) : null}
       <Reveal delay={0.08}>
-        <h2 className="mt-4 text-3xl leading-tight text-primary sm:text-4xl md:text-5xl">
+        <h2 className="mt-3 text-3xl leading-tight text-primary sm:text-5xl md:text-6xl font-bold font-display">
           {title}
         </h2>
       </Reveal>
       {note ? (
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-4 max-w-md font-script text-lg text-muted-foreground italic sm:text-xl">
+          <p className="mx-auto mt-3 max-w-lg font-script text-xl text-primary/85 italic sm:text-2xl font-medium">
             {note}
           </p>
         </Reveal>

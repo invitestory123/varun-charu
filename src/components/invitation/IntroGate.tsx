@@ -108,7 +108,7 @@ export function IntroGate() {
       <button
         type="button"
         onClick={finish}
-        className="absolute right-5 bottom-6 z-10 rounded-full bg-[color-mix(in_oklab,var(--ivory)_70%,transparent)] px-4 py-2 font-sans text-[0.6rem] tracking-[0.28em] text-primary uppercase backdrop-blur"
+        className="absolute right-5 bottom-6 z-10 rounded-full bg-[color-mix(in_oklab,var(--ivory)_85%,transparent)] px-5 py-2.5 font-sans text-xs tracking-[0.28em] text-primary uppercase backdrop-blur border border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] font-bold shadow-md cursor-pointer"
       >
         Skip
       </button>

@@ -120,13 +120,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm md:text-base font-semibold tracking-wide text-primary/90"
+          className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-sm sm:text-base md:text-lg font-bold tracking-wide text-primary"
           style={{ fontFamily: "var(--font-devanagari)" }}
         >
           {invitation.invocations.map((inv, idx) => (
             <span
               key={idx}
-              className="gold-text px-2 py-0.5 rounded-full bg-[color-mix(in_oklab,var(--ivory)_60%,transparent)] backdrop-blur-xs shadow-xs"
+              className="px-3.5 py-1 rounded-full bg-[color-mix(in_oklab,var(--ivory)_80%,transparent)] text-primary backdrop-blur-xs shadow-xs border border-[color-mix(in_oklab,var(--gold)_40%,transparent)] font-bold"
             >
               {inv}
             </span>
@@ -137,7 +137,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.3 }}
-          className="mt-4 font-sans text-[0.62rem] tracking-[0.45em] text-primary/75 uppercase sm:text-xs"
+          className="mt-4 font-sans text-xs sm:text-sm tracking-[0.45em] text-primary font-bold uppercase"
         >
           {invitation.tagline}
         </motion.p>
@@ -146,19 +146,31 @@ export function Hero() {
           initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-4 text-4xl leading-[1.05] tracking-wide text-primary drop-shadow-[0_2px_18px_rgba(255,255,255,0.7)] sm:text-6xl md:text-7xl font-display"
+          className="mt-3 text-5xl leading-[1.05] tracking-wide text-primary drop-shadow-[0_2px_24px_rgba(255,255,255,0.95)] sm:text-7xl md:text-8xl font-display font-semibold"
         >
           <span>{invitation.couple.groom}</span>
-          <span className="mx-3 font-script text-2xl italic sm:text-4xl text-gold-deep">&amp;</span>
+          <span className="mx-3 font-script text-3xl italic sm:text-5xl text-gold-deep">&amp;</span>
           <br className="sm:hidden" />
           <span>{invitation.couple.bride}</span>
         </motion.h1>
+
+        {/* #SYforever Hashtag */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="mt-3"
+        >
+          <span className="inline-block rounded-full bg-[color-mix(in_oklab,var(--gold)_25%,var(--ivory))] px-5 py-1.5 font-sans text-xs sm:text-sm md:text-base font-bold tracking-[0.35em] text-primary uppercase shadow-xs border border-[color-mix(in_oklab,var(--gold)_50%,transparent)]">
+            #SYforever
+          </span>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-2 font-sans text-[0.68rem] tracking-[0.38em] text-primary/70 uppercase sm:text-sm font-semibold"
+          className="mt-2.5 font-sans text-xs sm:text-sm md:text-base tracking-[0.38em] text-primary uppercase font-bold"
         >
           {invitation.couple.title}
         </motion.p>
@@ -167,24 +179,24 @@ export function Hero() {
           initial={{ opacity: 0, scaleX: 0.4 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 1.2, delay: 0.9 }}
-          className="mt-4 h-px w-44 origin-center"
-          style={{ background: "var(--gradient-gold)" }}
+          className="mt-4 h-0.5 w-48 origin-center bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent"
         />
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.05 }}
-          className="mt-4 font-script text-xl text-primary/85 italic sm:text-2xl"
+          className="mt-4 font-script text-2xl text-primary italic sm:text-3xl font-semibold"
         >
           {invitation.subTagline}
         </motion.p>
 
+        {/* Sole Primary Wedding Date & Venue */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.15 }}
-          className="mt-1 font-sans text-[0.62rem] tracking-[0.3em] text-gold-deep font-semibold uppercase sm:text-xs"
+          className="mt-2 font-sans text-sm sm:text-base md:text-lg tracking-[0.25em] text-primary font-bold uppercase"
         >
           {invitation.dateLabel} · {invitation.venue.name}
         </motion.p>
@@ -196,9 +208,9 @@ export function Hero() {
           transition={{ duration: 1, delay: 1.3 }}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="glass-plate shimmer mt-6 rounded-full px-8 py-3 font-sans text-[0.7rem] tracking-[0.32em] uppercase"
+          className="glass-plate shimmer mt-6 rounded-full px-8 py-3.5 font-sans text-xs sm:text-sm tracking-[0.3em] uppercase border-2 border-[var(--gold-deep)] shadow-md"
         >
-          <span className="gold-text shimmer font-semibold">Wedding Celebrations</span>
+          <span className="text-primary font-bold">Wedding Celebrations</span>
         </motion.a>
 
         <motion.div

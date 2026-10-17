@@ -93,36 +93,38 @@ export function Timeline() {
                       {romanNumerals[i] || String(i + 1)}
                     </span>
 
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[color-mix(in_oklab,var(--gold)_20%,transparent)] pb-3">
-                      <h3 className="font-display text-2xl sm:text-3xl font-medium tracking-wide text-primary uppercase">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[color-mix(in_oklab,var(--gold-deep)_25%,transparent)] pb-3">
+                      <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-wide text-primary uppercase">
                         {event.name}
                       </h3>
-                      <span className="rounded-full bg-[color-mix(in_oklab,var(--gold)_15%,transparent)] px-3 py-1 font-sans text-[0.62rem] sm:text-xs tracking-[0.2em] text-gold-deep font-semibold uppercase">
-                        {event.date}
+                      <span className="rounded-full bg-[color-mix(in_oklab,var(--gold)_20%,transparent)] px-3.5 py-1 font-sans text-xs sm:text-sm tracking-[0.18em] text-primary font-bold uppercase border border-[color-mix(in_oklab,var(--gold-deep)_30%,transparent)]">
+                        {i === 2 && event.date === invitation.celebrations[i - 1]?.date
+                          ? "Same Day · 5:30 PM"
+                          : event.date}
                       </span>
                     </div>
 
-                    <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-base sm:text-lg leading-relaxed text-primary/90 font-medium">
                       {event.description}
                     </p>
 
                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                      <div className="flex items-center gap-2.5 text-primary/85">
-                        <Clock size={16} className="text-gold-deep shrink-0" />
-                        <span className="font-sans text-xs sm:text-sm font-medium">
+                      <div className="flex items-center gap-2.5 text-primary">
+                        <Clock size={18} className="text-gold-deep shrink-0 font-bold" />
+                        <span className="font-sans text-sm sm:text-base font-bold">
                           {event.time}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2.5 text-primary/85">
-                        <MapPin size={16} className="text-gold-deep shrink-0" />
-                        <span className="font-sans text-xs sm:text-sm font-medium">
+                      <div className="flex items-center gap-2.5 text-primary">
+                        <MapPin size={18} className="text-gold-deep shrink-0 font-bold" />
+                        <span className="font-sans text-sm sm:text-base font-bold">
                           {event.venue}
                         </span>
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-3 border-t border-[color-mix(in_oklab,var(--gold)_15%,transparent)] flex items-center justify-between">
-                      <span className="font-script text-sm sm:text-base text-gold-deep italic">
+                    <div className="mt-5 pt-3 border-t border-[color-mix(in_oklab,var(--gold-deep)_20%,transparent)] flex items-center justify-between">
+                      <span className="font-script text-base sm:text-lg text-primary font-semibold italic">
                         Venue: {event.venue}
                       </span>
                       <a
@@ -132,9 +134,9 @@ export function Timeline() {
                         }
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 font-sans text-[0.62rem] tracking-[0.2em] uppercase text-primary hover:text-gold-deep transition-colors font-semibold"
+                        className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.2em] uppercase text-primary hover:text-gold-deep transition-colors font-bold"
                       >
-                        <MapPin size={13} /> View Map
+                        <MapPin size={15} /> View Map
                       </a>
                     </div>
                   </motion.div>

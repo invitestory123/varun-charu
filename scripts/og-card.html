@@ -201,36 +201,36 @@
       border: 1px solid rgba(212, 175, 95, 0.45);
     }
 
-    /* 4-Celebrations Row */
+    /* 3-Celebrations Row */
     .events-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       width: 100%;
-      max-width: 1070px;
+      max-width: 980px;
       margin-top: 6px;
     }
 
     .event-card {
-      background: rgba(255, 252, 245, 0.8);
-      border: 1px solid rgba(212, 175, 95, 0.35);
+      background: rgba(255, 252, 245, 0.85);
+      border: 1.5px solid rgba(212, 175, 95, 0.45);
       border-radius: 14px;
-      padding: 8px 10px;
+      padding: 10px 14px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(180, 140, 60, 0.06);
+      box-shadow: 0 2px 8px rgba(180, 140, 60, 0.08);
     }
 
     .event-card-name {
       font-family: 'Marcellus', serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: #4a1625;
+      font-size: 16px;
+      font-weight: 700;
+      color: #3b111d;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .event-card-datetime {
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #9e6d24;
       margin-top: 2px;
@@ -238,8 +238,9 @@
     }
 
     .event-card-venue {
-      font-size: 11.5px;
-      color: #554038;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #4a362e;
       margin-top: 2px;
       white-space: nowrap;
       overflow: hidden;
@@ -247,32 +248,32 @@
       line-height: 1.2;
     }
 
-    /* Bottom: Request & Regards */
+    /* Bottom: Regards & #SYforever */
     .card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
       max-width: 960px;
-      border-top: 1px solid rgba(212, 175, 95, 0.45);
+      border-top: 1.5px solid rgba(212, 175, 95, 0.5);
       padding-top: 8px;
       margin-top: 4px;
     }
 
-    .no-gifts {
-      font-size: 13.5px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      color: #9e6b22;
+    .hashtag {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: #8c2438;
       text-transform: uppercase;
     }
 
     .regards {
       font-style: italic;
-      font-size: 14.5px;
-      color: #5a4237;
+      font-size: 15px;
+      color: #3b2b24;
       letter-spacing: 0.04em;
-      font-weight: 600;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -317,33 +318,28 @@
       <div class="date-banner-line"></div>
     </div>
 
-    <!-- 4 Celebrations Grid -->
+    <!-- 3 Celebrations Grid -->
     <div class="events-grid">
       <div class="event-card">
         <div class="event-card-name">Haldi</div>
         <div class="event-card-datetime">20 Nov · 12:00 PM</div>
-        <div class="event-card-venue">DE JAVU MANOR</div>
+        <div class="event-card-venue">De javu manor, Khambra</div>
       </div>
       <div class="event-card">
         <div class="event-card-name">Hathbhara</div>
         <div class="event-card-datetime">21 Nov · 10:00 AM</div>
-        <div class="event-card-venue">Shree Baba Gajja Ji</div>
+        <div class="event-card-venue">Shree Baba Gajja Ji Tomri</div>
       </div>
       <div class="event-card">
         <div class="event-card-name">Sehra Bandi</div>
         <div class="event-card-datetime">21 Nov · 5:30 PM</div>
         <div class="event-card-venue">Ramada City Centre</div>
       </div>
-      <div class="event-card">
-        <div class="event-card-name">Wedding</div>
-        <div class="event-card-datetime">21 Nov · 8:00 PM</div>
-        <div class="event-card-venue">Hall Arabia, Elysium Grand</div>
-      </div>
     </div>
 
     <!-- Footer -->
     <div class="card-footer">
-      <div class="no-gifts">No Gifts, No Shagun &nbsp;·&nbsp; Only Blessings</div>
+      <div class="hashtag">#SYforever</div>
       <div class="regards">With Love &amp; Regards: Jain Family</div>
     </div>
   </div>

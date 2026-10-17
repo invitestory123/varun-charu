@@ -27,6 +27,7 @@ export const invitation = {
     bride: "Yashika",
     initials: "S & Y",
     title: "Subahu Weds Yashika",
+    hashtag: "#SYforever",
   },
   heavenlyBlessings: {
     title: "With Heavenly Blessings of",
@@ -62,10 +63,10 @@ export const invitation = {
   dateLabel: "Saturday, 21 November 2026",
   timeLabel: "8:00 PM onwards",
   venue: {
-    name: "Hall Arabia, The Elysium Grand",
-    address: "Hall Arabia, The Elysium Grand",
-    mapsQuery: "Hall Arabia The Elysium Grand",
-    mapsUrl: "https://share.google/GDvJDfE6dhrgUX2yt",
+    name: "De javu manor, Khambra",
+    address: "De javu manor, Khambra",
+    mapsQuery: "DE JAVU MANOR Khambra",
+    mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
   },
   dressCode: "Traditional & Festive Indian Elegance",
   hero: {
@@ -79,11 +80,11 @@ export const invitation = {
       name: "Haldi",
       date: "20 November 2026",
       time: "12:00 PM onwards",
-      venue: "DE JAVU MANOR",
-      address: "DE JAVU MANOR",
+      venue: "De javu manor, Khambra",
+      address: "De javu manor, Khambra",
       description: "A cheerful afternoon drenched in golden turmeric, vibrant marigolds, and hearty laughter.",
       dateISO: "2026-11-20T12:00:00+05:30",
-      mapsQuery: "DE JAVU MANOR",
+      mapsQuery: "DE JAVU MANOR Khambra",
       mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
     },
     {
@@ -110,18 +111,6 @@ export const invitation = {
       mapsQuery: "Ramada by Wyndham Jalandhar City Centre",
       mapsUrl: "https://share.google/V9kQ3juWQuJzMXs4j",
     },
-    {
-      id: "wedding",
-      name: "Wedding",
-      date: "21 November 2026",
-      time: "8:00 PM onwards",
-      venue: "Hall Arabia, The Elysium Grand",
-      address: "Hall Arabia, The Elysium Grand",
-      description: "The sacred nuptials, the pheras, and the beginning of our forever.",
-      dateISO: "2026-11-21T20:00:00+05:30",
-      mapsQuery: "Hall Arabia The Elysium Grand",
-      mapsUrl: "https://share.google/GDvJDfE6dhrgUX2yt",
-    },
   ] as EventItem[],
   /** For backwards compatibility with timeline component if needed */
   chapters: [
@@ -129,7 +118,7 @@ export const invitation = {
       no: "I",
       title: "Haldi Ceremony",
       when: "20 November 2026 · 12:00 PM onwards",
-      text: "DE JAVU MANOR — A joyous celebration drenched in sunshine, golden turmeric, and love.",
+      text: "De javu manor, Khambra — A joyous celebration drenched in sunshine, golden turmeric, and love.",
     },
     {
       no: "II",
@@ -143,16 +132,10 @@ export const invitation = {
       when: "21 November 2026 · 5:30 PM onwards",
       text: "Ramada by Wyndham Jalandhar City Centre — Tying the ceremonial sehra blessed by elders and loved ones.",
     },
-    {
-      no: "IV",
-      title: "The Wedding (Varmala & Pheras)",
-      when: "21 November 2026 · 8:00 PM onwards",
-      text: "Hall Arabia, The Elysium Grand — Two souls unite in sacred harmony as Subahu and Yashika embark on forever.",
-    },
   ],
   note: {
-    heading: "NO GIFTS, NO SHAGUN",
-    subheading: "ONLY BLESSINGS",
+    heading: "",
+    subheading: "",
   },
   compliments: {
     regards: "With Love and Regards,",
