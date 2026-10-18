@@ -88,19 +88,12 @@ export function CoupleStory() {
               Late Smt. Mahimawanti Jain &amp; Late Sh. Dev Raj Jain
             </p>
 
-            {/* Little space and & */}
-            <div className="my-3.5 flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold-deep)] opacity-60" />
-              <span className="font-script text-2xl sm:text-3xl text-gold-deep italic font-bold">&amp;</span>
-              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold-deep)] opacity-60" />
-            </div>
-
-            <div className="space-y-3">
+            <div className="mt-5 space-y-3">
               <p className="font-display text-xl sm:text-2xl text-primary leading-snug font-bold">
                 Smt. Usha Jain &amp; Sh. Surinder Kumar Jain
               </p>
               <p className="font-script text-xl sm:text-2xl text-primary italic leading-relaxed font-medium">
-                &ldquo;together with their families, cordially invite you to celebrate the wedding celebrations of their beloved&rdquo;
+                &ldquo;together with their families, cordially invite you to celebrate the wedding celebrations of their beloved Grandson&rdquo;
               </p>
             </div>
           </div>

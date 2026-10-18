@@ -37,7 +37,7 @@ export const invitation = {
     ],
   },
   inviteLead:
-    "Together with their families, cordially invite you to celebrate the wedding celebrations of their beloved",
+    "together with their families, cordially invite you to celebrate the wedding celebrations of their beloved Grandson",
   story: {
     title: "Subahu & Yashika",
     subtitle: "Two souls, two families, one sacred journey",
@@ -79,13 +79,13 @@ export const invitation = {
       id: "haldi",
       name: "Haldi",
       date: "20 November 2026",
-      time: "1:00 PM onwards",
+      time: "Starts from 12:00 PM onwards",
       venue: "De javu manor, Khambra",
       address: "De javu manor, Khambra",
       description: "A cheerful afternoon drenched in golden turmeric, vibrant marigolds, and hearty laughter.",
-      dateISO: "2026-11-20T13:00:00+05:30",
+      dateISO: "2026-11-20T12:00:00+05:30",
       mapsQuery: "DE JAVU MANOR Khambra",
-      mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
+      mapsUrl: "https://maps.app.goo.gl/jN5kimUfaLUD6weu9?g_st=ic",
     },
     {
       id: "hathbhara",
@@ -97,7 +97,7 @@ export const invitation = {
       description: "Auspicious morning ceremony invoking the sacred blessings of Shree Baba Gajja Ji.",
       dateISO: "2026-11-21T10:00:00+05:30",
       mapsQuery: "Shree baba Gajja ji Tomri",
-      mapsUrl: "https://share.google/i50JimyqBeYSuNOxO",
+      mapsUrl: "https://maps.app.goo.gl/dfYFxcrzvtyUmpEq6?g_st=ic",
     },
     {
       id: "sehrabandi",
@@ -109,7 +109,7 @@ export const invitation = {
       description: "The traditional ceremony of tying the sehra and showering heartfelt family blessings.",
       dateISO: "2026-11-21T17:30:00+05:30",
       mapsQuery: "Ramada by Wyndham Jalandhar City Centre",
-      mapsUrl: "https://share.google/V9kQ3juWQuJzMXs4j",
+      mapsUrl: "https://maps.app.goo.gl/gNaRNwETGwFQEaX87?g_st=ic",
     },
     {
       id: "wedding",
@@ -129,7 +129,7 @@ export const invitation = {
     {
       no: "I",
       title: "Haldi Ceremony",
-      when: "20 November 2026 · 1:00 PM onwards",
+      when: "20 November 2026 · Starts from 12:00 PM onwards",
       text: "De javu manor, Khambra — A joyous celebration drenched in sunshine, golden turmeric, and love.",
     },
     {
