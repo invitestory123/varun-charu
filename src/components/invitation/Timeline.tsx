@@ -98,9 +98,7 @@ export function Timeline() {
                         {event.name}
                       </h3>
                       <span className="rounded-full bg-[color-mix(in_oklab,var(--gold)_20%,transparent)] px-3.5 py-1 font-sans text-xs sm:text-sm tracking-[0.18em] text-primary font-bold uppercase border border-[color-mix(in_oklab,var(--gold-deep)_30%,transparent)]">
-                        {i === 2 && event.date === invitation.celebrations[i - 1]?.date
-                          ? "Same Day · 5:30 PM"
-                          : event.date}
+                        {event.date}
                       </span>
                     </div>
 

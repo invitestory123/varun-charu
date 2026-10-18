@@ -191,16 +191,6 @@ export function Hero() {
           {invitation.subTagline}
         </motion.p>
 
-        {/* Sole Primary Wedding Date & Venue */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.15 }}
-          className="mt-2 font-sans text-sm sm:text-base md:text-lg tracking-[0.25em] text-primary font-bold uppercase"
-        >
-          {invitation.dateLabel} · {invitation.venue.name}
-        </motion.p>
-
         <motion.a
           href="#celebrations"
           initial={{ opacity: 0, y: 16 }}

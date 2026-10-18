@@ -141,10 +141,6 @@ export function Footer() {
           )}
         </div>
 
-        <p className="mt-6 font-sans text-xs sm:text-sm tracking-[0.25em] text-primary font-bold uppercase">
-          {invitation.venue.name}
-        </p>
-
         <p className="mt-10 inline-flex items-center gap-2 font-sans text-xs tracking-[0.25em] text-primary/80 uppercase font-semibold">
           Made with <Heart size={14} className="fill-rose text-rose" /> for our families and friends
         </p>

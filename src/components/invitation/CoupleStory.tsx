@@ -14,7 +14,7 @@ function CoupleCard({
   initial: string;
   name: string;
   role: string;
-  parentage: string;
+  parentage?: string;
   text: string;
   flip?: boolean;
 }) {
@@ -44,9 +44,11 @@ function CoupleCard({
           <h3 className="mt-3 font-display text-4xl sm:text-5xl text-primary font-bold tracking-wide">
             {name}
           </h3>
-          <p className="mt-3 text-base sm:text-lg font-sans font-bold text-primary/90 tracking-wide">
-            {parentage}
-          </p>
+          {parentage ? (
+            <p className="mt-3 text-base sm:text-lg font-sans font-bold text-primary/90 tracking-wide">
+              {parentage}
+            </p>
+          ) : null}
           <div className="mx-auto my-4 h-px w-20 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
           <p className="font-script text-lg sm:text-xl text-primary/90 italic leading-relaxed">
             &ldquo;{text}&rdquo;
@@ -82,22 +84,25 @@ export function CoupleStory() {
               <Sparkles size={18} />
             </div>
 
-            <div className="space-y-2 mt-4">
-              {heavenlyBlessings.elders.map((elder, idx) => (
-                <p
-                  key={idx}
-                  className="font-display text-xl sm:text-2xl text-primary leading-snug font-bold"
-                >
-                  {elder}
-                </p>
-              ))}
+            <p className="mt-4 font-display text-xl sm:text-2xl text-primary leading-snug font-bold">
+              Late Smt. Mahimawanti Jain &amp; Late Sh. Dev Raj Jain
+            </p>
+
+            {/* Little space and & */}
+            <div className="my-3.5 flex items-center justify-center gap-3">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[var(--gold-deep)] opacity-60" />
+              <span className="font-script text-2xl sm:text-3xl text-gold-deep italic font-bold">&amp;</span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[var(--gold-deep)] opacity-60" />
             </div>
 
-            <div className="mx-auto my-6 h-0.5 w-28 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
-
-            <p className="font-script text-xl sm:text-2xl text-primary italic leading-relaxed font-medium">
-              &ldquo;{inviteLead}&rdquo;
-            </p>
+            <div className="space-y-3">
+              <p className="font-display text-xl sm:text-2xl text-primary leading-snug font-bold">
+                Smt. Usha Jain &amp; Sh. Surinder Kumar Jain
+              </p>
+              <p className="font-script text-xl sm:text-2xl text-primary italic leading-relaxed font-medium">
+                &ldquo;together with their families, cordially invite you to celebrate the wedding celebrations of their beloved&rdquo;
+              </p>
+            </div>
           </div>
         </Reveal>
 
@@ -146,9 +151,6 @@ export function CoupleStory() {
               मंगलम् भगवान वीरो, मंगलं गौतमो गणी।
               <br />
               मंगलम् कुन्दकुन्दार्यो, जैन धर्मोऽस्तु मंगलम्॥
-            </p>
-            <p className="mt-3 font-sans text-xs sm:text-sm tracking-[0.28em] text-gold-deep uppercase font-bold">
-              Jain Mangalacharan · Sacred Invocations
             </p>
           </motion.div>
         </Reveal>

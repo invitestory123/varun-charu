@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { IntroGate } from "@/components/invitation/IntroGate";
+import { MusicPlayer } from "@/components/invitation/MusicPlayer";
 import { Hero } from "@/components/invitation/Hero";
 
 import { CoupleStory } from "@/components/invitation/CoupleStory";
@@ -11,7 +12,7 @@ import { Footer } from "@/components/invitation/Footer";
 import { invitation } from "@/content/invitation";
 
 const title = `${invitation.couple.groom} Weds ${invitation.couple.bride} #SYforever — Wedding Invitation`;
-const description = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at De javu manor, Khambra. #SYforever`;
+const description = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at The Elysium Grand. #SYforever`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,6 +45,7 @@ function Index() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <MusicPlayer />
       <IntroGate />
       <Hero />
       <CoupleStory />

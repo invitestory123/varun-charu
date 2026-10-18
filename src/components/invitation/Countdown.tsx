@@ -17,8 +17,8 @@ function diff(target: number) {
 function Unit({ value, label }: { value: number; label: string }) {
   const text = String(value).padStart(2, "0");
   return (
-    <div className="glass-plate flex min-w-[5rem] flex-col items-center rounded-2xl px-4 py-4 sm:min-w-[6.5rem] sm:px-6 sm:py-6 border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-sm">
-      <div className="relative h-10 overflow-hidden sm:h-14">
+    <div className="glass-plate flex min-w-0 flex-1 flex-col items-center justify-center rounded-xl sm:rounded-2xl px-1.5 py-3 sm:px-6 sm:py-6 border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-sm">
+      <div className="relative h-8 sm:h-14 overflow-hidden flex items-center justify-center">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={text}
@@ -26,13 +26,13 @@ function Unit({ value, label }: { value: number; label: string }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -22, opacity: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="block font-display text-4xl text-primary font-bold tabular-nums sm:text-5xl"
+            className="block font-display text-2xl xs:text-3xl sm:text-5xl text-primary font-bold tabular-nums"
           >
             {text}
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="mt-2 font-sans text-xs sm:text-sm tracking-[0.25em] text-primary uppercase font-bold">
+      <span className="mt-1.5 sm:mt-2 font-sans text-[9px] sm:text-sm tracking-[0.12em] sm:tracking-[0.25em] text-primary uppercase font-bold text-center">
         {label}
       </span>
     </div>
@@ -52,7 +52,7 @@ export function Countdown() {
 
 
   return (
-    <section className="relative overflow-hidden px-5 py-20">
+    <section className="relative overflow-hidden px-4 py-20 sm:px-5">
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
@@ -68,14 +68,14 @@ export function Countdown() {
           eyebrow="Until We Say Forever"
           title="Counting Down to Our Wedding"
         />
-        <div className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
+        <div className="mt-10 grid grid-cols-4 gap-2 sm:gap-4 max-w-xl mx-auto w-full">
           <Unit value={left.days} label="Days" />
           <Unit value={left.hours} label="Hours" />
           <Unit value={left.minutes} label="Minutes" />
           <Unit value={left.seconds} label="Seconds" />
         </div>
         <p className="mt-8 text-center font-display text-lg sm:text-xl text-primary font-bold tracking-wide">
-          #SYforever · {invitation.venue.name}
+          #SYforever
         </p>
       </div>
     </section>

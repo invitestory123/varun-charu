@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { invitation } from "../content/invitation";
 
 const siteTitle = `${invitation.couple.groom} Weds ${invitation.couple.bride} #SYforever — Wedding Invitation`;
-const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at De javu manor, Khambra. #SYforever`;
+const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at The Elysium Grand. #SYforever`;
 
 function NotFoundComponent() {
   return (

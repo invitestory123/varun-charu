@@ -44,14 +44,14 @@ export const invitation = {
     groom: {
       name: "Subahu",
       role: "The Groom",
-      parentage: "S/o Mrs. Mukta Jain & Mr. Atul Jain",
-      text: "Beloved grandson of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain, and Smt. Usha Jain & Sh. Surinder Kumar Jain. Walking towards forever with grace, love, and devotion.",
+      parentage: "",
+      text: "Beloved son of Mrs. Mukta Jain & Mr. Atul Jain. Walking towards forever with grace, love, and devotion.",
     },
     bride: {
       name: "Yashika",
       role: "The Bride",
-      parentage: "D/o Mr. Nilesh Jain & Mrs. Rashmi Jain, Samana",
-      text: "Cherished daughter of Mr. Nilesh Jain & Mrs. Rashmi Jain, Samana. Bringing warmth, smiles, and grace as we begin our new chapter together.",
+      parentage: "",
+      text: "Cherished daughter of Mrs. Rashmi & Mr. Nilesh Jain, Samana. Bringing warmth, smiles, and grace as we begin our new chapter together.",
     },
   },
   shloka: {
@@ -63,10 +63,10 @@ export const invitation = {
   dateLabel: "Saturday, 21 November 2026",
   timeLabel: "8:00 PM onwards",
   venue: {
-    name: "De javu manor, Khambra",
-    address: "De javu manor, Khambra",
-    mapsQuery: "DE JAVU MANOR Khambra",
-    mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
+    name: "The Elysium Grand",
+    address: "Arabia hall, the Elysium Grand",
+    mapsQuery: "The Elysium Grand",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Elysium+Grand",
   },
   dressCode: "Traditional & Festive Indian Elegance",
   hero: {
@@ -79,11 +79,11 @@ export const invitation = {
       id: "haldi",
       name: "Haldi",
       date: "20 November 2026",
-      time: "12:00 PM onwards",
+      time: "1:00 PM onwards",
       venue: "De javu manor, Khambra",
       address: "De javu manor, Khambra",
       description: "A cheerful afternoon drenched in golden turmeric, vibrant marigolds, and hearty laughter.",
-      dateISO: "2026-11-20T12:00:00+05:30",
+      dateISO: "2026-11-20T13:00:00+05:30",
       mapsQuery: "DE JAVU MANOR Khambra",
       mapsUrl: "https://share.google/WFuhhoaC4PZTGFSc7",
     },
@@ -111,13 +111,25 @@ export const invitation = {
       mapsQuery: "Ramada by Wyndham Jalandhar City Centre",
       mapsUrl: "https://share.google/V9kQ3juWQuJzMXs4j",
     },
+    {
+      id: "wedding",
+      name: "Wedding",
+      date: "21 November 2026",
+      time: "8:00 PM onwards",
+      venue: "Arabia hall, the Elysium Grand",
+      address: "Arabia hall, the Elysium Grand",
+      description: "The sacred nuptials and joyous wedding celebrations as two souls unite for a lifetime of love and joy.",
+      dateISO: "2026-11-21T20:00:00+05:30",
+      mapsQuery: "The Elysium Grand",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Elysium+Grand",
+    },
   ] as EventItem[],
   /** For backwards compatibility with timeline component if needed */
   chapters: [
     {
       no: "I",
       title: "Haldi Ceremony",
-      when: "20 November 2026 · 12:00 PM onwards",
+      when: "20 November 2026 · 1:00 PM onwards",
       text: "De javu manor, Khambra — A joyous celebration drenched in sunshine, golden turmeric, and love.",
     },
     {
@@ -131,6 +143,12 @@ export const invitation = {
       title: "Sehra Bandi",
       when: "21 November 2026 · 5:30 PM onwards",
       text: "Ramada by Wyndham Jalandhar City Centre — Tying the ceremonial sehra blessed by elders and loved ones.",
+    },
+    {
+      no: "IV",
+      title: "Wedding",
+      when: "21 November 2026 · 8:00 PM onwards",
+      text: "Arabia hall, the Elysium Grand — Auspicious wedding ceremony and celebration.",
     },
   ],
   note: {
