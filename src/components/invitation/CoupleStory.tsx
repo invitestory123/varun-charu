@@ -3,15 +3,22 @@ import { Sparkles, Heart } from "lucide-react";
 import { invitation } from "@/content/invitation";
 import { Ornament, Reveal, SectionTitle } from "./Reveal";
 
+const groomLocal = "/portrait-groom.jpg";
+const brideLocal = "/portrait-bride.jpg";
+
 function CoupleCard({
-  initial,
+  imageSrc,
+  fallbackSrc,
+  imageAlt,
   name,
   role,
   parentage,
   text,
   flip,
 }: {
-  initial: string;
+  imageSrc: string;
+  fallbackSrc?: string;
+  imageAlt: string;
   name: string;
   role: string;
   parentage?: string;
@@ -23,36 +30,60 @@ function CoupleCard({
       <motion.article
         whileHover={{ y: -6 }}
         transition={{ type: "spring", stiffness: 180, damping: 20 }}
-        className="plate paper-grain h-full rounded-[2.2rem] p-8 sm:p-10 border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-lg flex flex-col items-center text-center justify-between"
+        className="plate paper-grain h-full overflow-hidden rounded-[2.2rem] border-2 border-[color-mix(in_oklab,var(--gold-deep)_35%,transparent)] shadow-lg flex flex-col justify-between"
       >
         <div className="w-full flex flex-col items-center">
-          {/* Royal Crest Monogram instead of painted photo */}
-          <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[var(--gold-deep)] bg-[color-mix(in_oklab,var(--ivory)_85%,transparent)] shadow-inner">
-            <span
-              className="font-display text-4xl sm:text-5xl font-bold text-primary"
-            >
-              {initial}
-            </span>
-            <div className="absolute -top-1.5 -right-1.5 text-gold-deep">
-              <Sparkles size={18} />
-            </div>
+          {/* Royal Portrait Frame */}
+          <div className="relative w-full aspect-square overflow-hidden border-b-2 border-[color-mix(in_oklab,var(--gold-deep)_30%,transparent)] bg-[color-mix(in_oklab,var(--ivory)_85%,transparent)]">
+            <motion.img
+              src={imageSrc}
+              onError={(e) => {
+                if (fallbackSrc && e.currentTarget.src !== fallbackSrc) {
+                  e.currentTarget.src = fallbackSrc;
+                }
+              }}
+              alt={imageAlt}
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              initial={{ scale: 1.05 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            />
+            {/* Subtle Vignette & Shimmer */}
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-[color-mix(in_oklab,var(--ivory)_40%,transparent)] via-transparent to-transparent pointer-events-none"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle at 50% 60%, color-mix(in oklab, var(--gold) 18%, transparent), transparent 70%)",
+              }}
+            />
           </div>
 
-          <p className="mt-6 font-sans text-xs sm:text-sm tracking-[0.4em] text-gold-deep uppercase font-bold">
-            {role}
-          </p>
-          <h3 className="mt-3 font-display text-4xl sm:text-5xl text-primary font-bold tracking-wide">
-            {name}
-          </h3>
-          {parentage ? (
-            <p className="mt-3 text-base sm:text-lg font-sans font-bold text-primary/90 tracking-wide">
-              {parentage}
+          <div className="p-6 sm:p-8 pt-6 w-full flex flex-col items-center text-center">
+            <p className="font-sans text-xs sm:text-sm tracking-[0.4em] text-gold-deep uppercase font-bold">
+              {role}
             </p>
-          ) : null}
-          <div className="mx-auto my-4 h-px w-20 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
-          <p className="font-script text-lg sm:text-xl text-primary/90 italic leading-relaxed">
-            &ldquo;{text}&rdquo;
-          </p>
+            <h3 className="mt-2 font-display text-4xl sm:text-5xl text-primary font-bold tracking-wide">
+              {name}
+            </h3>
+            {parentage ? (
+              <p className="mt-3 text-base sm:text-lg font-sans font-bold text-primary/90 tracking-wide">
+                {parentage}
+              </p>
+            ) : null}
+            <div className="mx-auto my-4 h-px w-20 bg-gradient-to-r from-transparent via-[var(--gold-deep)] to-transparent" />
+            <p className="font-script text-lg sm:text-xl text-primary/90 italic leading-relaxed">
+              &ldquo;{text}&rdquo;
+            </p>
+          </div>
         </div>
       </motion.article>
     </Reveal>
@@ -111,14 +142,18 @@ export function CoupleStory() {
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 sm:gap-10">
             <CoupleCard
-              initial="S"
+              imageSrc={(story.groom as any).image || groomLocal}
+              fallbackSrc={groomLocal}
+              imageAlt={`Portrait of the groom ${story.groom.name}`}
               name={story.groom.name}
               role={story.groom.role}
               parentage={story.groom.parentage}
               text={story.groom.text}
             />
             <CoupleCard
-              initial="Y"
+              imageSrc={(story.bride as any).image || brideLocal}
+              fallbackSrc={brideLocal}
+              imageAlt={`Portrait of the bride ${story.bride.name}`}
               name={story.bride.name}
               role={story.bride.role}
               parentage={story.bride.parentage}
