@@ -351,7 +351,7 @@ const htmlContent = `<!DOCTYPE html>
       <div class="event-card">
         <div class="event-card-name">Sehra Bandi</div>
         <div class="event-card-datetime">21 Nov · 5:30 PM</div>
-        <div class="event-card-venue">Ramada City Centre</div>
+        <div class="event-card-venue">Senate Hall, Ramada City Centre</div>
       </div>
     </div>
 

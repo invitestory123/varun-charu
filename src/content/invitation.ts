@@ -104,11 +104,11 @@ export const invitation = {
       name: "Sehra Bandi",
       date: "21 November 2026",
       time: "5:30 PM onwards",
-      venue: "Ramada by Wyndham Jalandhar City Centre",
-      address: "Ramada by Wyndham Jalandhar City Centre",
+      venue: "Senate Hall, Ramada by Wyndham Jalandhar City Centre",
+      address: "Senate Hall, Ramada by Wyndham Jalandhar City Centre",
       description: "The traditional ceremony of tying the sehra and showering heartfelt family blessings.",
       dateISO: "2026-11-21T17:30:00+05:30",
-      mapsQuery: "Ramada by Wyndham Jalandhar City Centre",
+      mapsQuery: "Senate Hall, Ramada by Wyndham Jalandhar City Centre",
       mapsUrl: "https://maps.app.goo.gl/gNaRNwETGwFQEaX87?g_st=ic",
     },
     {
@@ -142,7 +142,7 @@ export const invitation = {
       no: "III",
       title: "Sehra Bandi",
       when: "21 November 2026 · 5:30 PM onwards",
-      text: "Ramada by Wyndham Jalandhar City Centre — Tying the ceremonial sehra blessed by elders and loved ones.",
+      text: "Senate Hall, Ramada by Wyndham Jalandhar City Centre — Tying the ceremonial sehra blessed by elders and loved ones.",
     },
     {
       no: "IV",
