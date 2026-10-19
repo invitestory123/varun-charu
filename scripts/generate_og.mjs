@@ -14,7 +14,8 @@ function toBase64(relPath, mime) {
 
 const palaceB64 = toBase64("src/assets/hero-palace.jpg", "image/jpeg");
 const bougB64 = toBase64("src/assets/bougainvillea.png", "image/png");
-const flourishB64 = toBase64("src/assets/gold-flourish.png", "image/png");
+const groomB64 = toBase64("src/assets/portrait-groom.jpg", "image/jpeg");
+const brideB64 = toBase64("src/assets/portrait-bride.jpg", "image/jpeg");
 
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -48,7 +49,7 @@ const htmlContent = `<!DOCTYPE html>
       background-image: url('${palaceB64}');
       background-size: cover;
       background-position: center bottom;
-      opacity: 0.14;
+      opacity: 0.13;
     }
 
     /* Silk & Ivory Tint Overlay */
@@ -68,20 +69,20 @@ const htmlContent = `<!DOCTYPE html>
       height: 586px;
       border-radius: 26px;
       border: 2px solid rgba(200, 160, 85, 0.88);
-      background: rgba(255, 254, 250, 0.86);
+      background: rgba(255, 254, 250, 0.88);
       box-shadow: 0 10px 40px rgba(160, 120, 60, 0.12), inset 0 0 45px rgba(230, 205, 145, 0.18);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 22px 30px 18px;
+      padding: 18px 28px 14px;
       z-index: 2;
     }
 
     /* Inner Fine Gold Inset Border */
     .card-inset {
       position: absolute;
-      inset: 9px;
+      inset: 8px;
       border-radius: 19px;
       border: 1px solid rgba(198, 155, 75, 0.45);
       pointer-events: none;
@@ -92,7 +93,7 @@ const htmlContent = `<!DOCTYPE html>
       position: absolute;
       top: -24px;
       left: -24px;
-      width: 250px;
+      width: 230px;
       opacity: 0.9;
       pointer-events: none;
     }
@@ -101,7 +102,7 @@ const htmlContent = `<!DOCTYPE html>
       position: absolute;
       top: -24px;
       right: -24px;
-      width: 250px;
+      width: 230px;
       transform: scaleX(-1);
       opacity: 0.9;
       pointer-events: none;
@@ -110,11 +111,11 @@ const htmlContent = `<!DOCTYPE html>
     /* Top: Invocations */
     .invocations {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
       justify-content: center;
       font-family: 'Noto Serif Devanagari', 'Nirmala UI', serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: #9e6d24;
       letter-spacing: 0.04em;
@@ -123,7 +124,7 @@ const htmlContent = `<!DOCTYPE html>
     .inv-badge {
       background: rgba(246, 235, 212, 0.7);
       border: 1px solid rgba(212, 175, 95, 0.45);
-      padding: 3px 18px;
+      padding: 2px 16px;
       border-radius: 999px;
       box-shadow: 0 2px 6px rgba(180, 140, 60, 0.08);
     }
@@ -135,60 +136,106 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .blessings-title {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.32em;
       color: #8c6832;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .blessings-names {
       font-family: 'Marcellus', serif;
-      font-size: 14.5px;
+      font-size: 13.5px;
       color: #3b2229;
       letter-spacing: 0.03em;
-      margin-top: 2px;
-      line-height: 1.3;
+      margin-top: 1px;
+      line-height: 1.25;
+      font-weight: 600;
     }
 
-    /* Couple Section */
-    .couple-section {
+    /* Couple Row With Portraits */
+    .couple-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      width: 100%;
+      max-width: 1040px;
+      margin-top: 1px;
+    }
+
+    .portrait-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      border: 2.5px solid rgba(200, 160, 85, 0.95);
+      box-shadow: 0 4px 16px rgba(180, 140, 60, 0.22);
+      overflow: hidden;
+      background: #fdf8ef;
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .portrait-badge {
+      margin-top: 4px;
+      font-family: 'Marcellus', serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #8c2438;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .couple-center {
       text-align: center;
-      margin-top: 2px;
+      flex: 1;
     }
 
     .lead-in {
-      font-size: 11.5px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.34em;
+      letter-spacing: 0.3em;
       color: #a87932;
       font-weight: 600;
     }
 
     .couple-title {
       font-family: 'Marcellus', serif;
-      font-size: 58px;
+      font-size: 52px;
       line-height: 1.05;
       color: #4a1625;
       letter-spacing: 0.03em;
       text-shadow: 0 2px 14px rgba(212, 175, 95, 0.3);
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .couple-amp {
       font-family: 'Great Vibes', cursive;
-      font-size: 46px;
+      font-size: 42px;
       color: #b5832a;
-      margin: 0 14px;
+      margin: 0 12px;
       font-weight: 400;
     }
 
     .parentage {
-      font-size: 15.5px;
+      font-size: 14.5px;
       font-weight: 600;
       color: #7a3c48;
       letter-spacing: 0.03em;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     /* Date Announcement Banner */
@@ -197,50 +244,50 @@ const htmlContent = `<!DOCTYPE html>
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .date-banner-line {
       height: 1px;
-      width: 110px;
+      width: 100px;
       background: linear-gradient(90deg, transparent, rgba(200, 160, 85, 0.8), transparent);
     }
 
     .date-badge {
       font-family: 'Marcellus', serif;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.22em;
       color: #8c2438;
       font-weight: 600;
       text-transform: uppercase;
-      padding: 3px 20px;
+      padding: 2px 18px;
       border-radius: 999px;
       background: rgba(246, 230, 205, 0.55);
       border: 1px solid rgba(212, 175, 95, 0.45);
     }
 
-    /* 3-Celebrations Row */
+    /* 4-Celebrations Grid */
     .events-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       width: 100%;
-      max-width: 980px;
-      margin-top: 6px;
+      max-width: 1060px;
+      margin-top: 4px;
     }
 
     .event-card {
-      background: rgba(255, 252, 245, 0.85);
-      border: 1.5px solid rgba(212, 175, 95, 0.45);
-      border-radius: 14px;
-      padding: 10px 14px;
+      background: rgba(255, 252, 245, 0.9);
+      border: 1.2px solid rgba(212, 175, 95, 0.45);
+      border-radius: 12px;
+      padding: 7px 10px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(180, 140, 60, 0.08);
     }
 
     .event-card-name {
       font-family: 'Marcellus', serif;
-      font-size: 16px;
+      font-size: 14.5px;
       font-weight: 700;
       color: #3b111d;
       letter-spacing: 0.08em;
@@ -248,18 +295,18 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .event-card-datetime {
-      font-size: 13.5px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #9e6d24;
-      margin-top: 2px;
+      margin-top: 1px;
       letter-spacing: 0.02em;
     }
 
     .event-card-venue {
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 600;
       color: #4a362e;
-      margin-top: 2px;
+      margin-top: 1px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -272,14 +319,14 @@ const htmlContent = `<!DOCTYPE html>
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-width: 960px;
+      max-width: 1040px;
       border-top: 1.5px solid rgba(212, 175, 95, 0.5);
-      padding-top: 8px;
-      margin-top: 4px;
+      padding-top: 6px;
+      margin-top: 2px;
     }
 
     .hashtag {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       letter-spacing: 0.22em;
       color: #8c2438;
@@ -288,7 +335,7 @@ const htmlContent = `<!DOCTYPE html>
 
     .regards {
       font-style: italic;
-      font-size: 15px;
+      font-size: 14.5px;
       color: #3b2b24;
       letter-spacing: 0.04em;
       font-weight: 700;
@@ -318,14 +365,30 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </div>
 
-    <!-- Couple Section -->
-    <div class="couple-section">
-      <div class="lead-in">Together With Their Families Cordially Invite You</div>
-      <div class="couple-title">
-        Subahu<span class="couple-amp">&amp;</span>Yashika
+    <!-- Couple Section With Portraits -->
+    <div class="couple-row">
+      <div class="portrait-wrap">
+        <div class="portrait-frame">
+          <img src="${groomB64}" class="portrait-img" alt="Subahu">
+        </div>
+        <span class="portrait-badge">The Groom</span>
       </div>
-      <div class="parentage">
-        S/o Mrs. Mukta &amp; Mr. Atul Jain &nbsp;·&nbsp; D/o Mrs. Rashmi &amp; Mr. Nilesh Jain (Samana)
+
+      <div class="couple-center">
+        <div class="lead-in">Together With Their Families Cordially Invite You</div>
+        <div class="couple-title">
+          Subahu<span class="couple-amp">&amp;</span>Yashika
+        </div>
+        <div class="parentage">
+          S/o Mrs. Mukta &amp; Mr. Atul Jain &nbsp;·&nbsp; D/o Mrs. Rashmi &amp; Mr. Nilesh Jain (Samana)
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-frame">
+          <img src="${brideB64}" class="portrait-img" alt="Yashika">
+        </div>
+        <span class="portrait-badge">The Bride</span>
       </div>
     </div>
 
@@ -336,7 +399,7 @@ const htmlContent = `<!DOCTYPE html>
       <div class="date-banner-line"></div>
     </div>
 
-    <!-- 3 Celebrations Grid -->
+    <!-- 4 Celebrations Grid -->
     <div class="events-grid">
       <div class="event-card">
         <div class="event-card-name">Haldi</div>
@@ -351,7 +414,12 @@ const htmlContent = `<!DOCTYPE html>
       <div class="event-card">
         <div class="event-card-name">Sehra Bandi</div>
         <div class="event-card-datetime">21 Nov · 5:30 PM</div>
-        <div class="event-card-venue">Senate Hall, Ramada City Centre</div>
+        <div class="event-card-venue">Senate Hall, Ramada</div>
+      </div>
+      <div class="event-card">
+        <div class="event-card-name">Wedding</div>
+        <div class="event-card-datetime">21 Nov · 8:00 PM</div>
+        <div class="event-card-venue">Arabia hall, Elysium Grand</div>
       </div>
     </div>
 

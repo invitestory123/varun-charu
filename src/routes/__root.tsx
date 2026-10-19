@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { invitation } from "../content/invitation";
 
 const siteTitle = `${invitation.couple.groom} Weds ${invitation.couple.bride} #SYforever — Wedding Invitation`;
-const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain & Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at The Elysium Grand. #SYforever`;
+const siteDescription = `With Heavenly Blessings of Late Smt. Mahimawanti Jain & Late Sh. Dev Raj Jain, and Smt. Usha Jain & Sh. Surinder Kumar Jain, cordially invite you to celebrate the wedding celebrations of Subahu & Yashika at The Elysium Grand. 20th & 21st November 2026. #SYforever`;
 
 function NotFoundComponent() {
   return (
@@ -87,26 +87,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: siteDescription,
       },
       { name: "theme-color", content: "#fdf8ef" },
-      { property: "og:site_name", content: `${invitation.couple.title} Wedding` },
+      { property: "og:site_name", content: `${invitation.couple.title} #SYforever` },
       { property: "og:type", content: "website" },
       { property: "og:title", content: siteTitle },
       {
         property: "og:description",
         content: siteDescription,
       },
-      { property: "og:image", content: "/og-image-subahu-yashika.png?v=3" },
-      { property: "og:image:secure_url", content: "/og-image-subahu-yashika.png?v=3" },
+      { property: "og:image", content: "/og-image-subahu-yashika.png?v=4" },
+      { property: "og:image:secure_url", content: "/og-image-subahu-yashika.png?v=4" },
       { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", "content": "1200" },
       { property: "og:image:height", "content": "630" },
-      { property: "og:image:alt", content: `${invitation.couple.title} Wedding Celebration Invitation Card` },
+      { property: "og:image:alt", content: `${invitation.couple.title} #SYforever Wedding Celebration Invitation Card` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: siteTitle },
       {
         name: "twitter:description",
         content: siteDescription,
       },
-      { name: "twitter:image", content: "/og-image-subahu-yashika.png?v=3" },
+      { name: "twitter:image", content: "/og-image-subahu-yashika.png?v=4" },
     ],
     scripts: [
       {
